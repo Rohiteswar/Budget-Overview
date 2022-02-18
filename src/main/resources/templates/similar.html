@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 3px solid #ddd;
+  padding: 24px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  height:40px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1 align="center">Similar Project Analysis</h1>
+
+<table id="customers">
+     <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Team Members</th>
+        <th>Time Period</th>
+        <th>Budget</th>
+     </tr>
+  <tr th:each="h: ${listHistory}">
+     <td th:text="${h.id}">ID</td>
+     <td th:text="${h.type}">Type</td>
+     <td th:text="${h.team}">Team Members</td>
+     <td th:text="${h.time}">Time Period</td>
+     <td th:text="${h.budget}">Budget</td>
+  </tr>
+</table>
+</body>
+
+</html>

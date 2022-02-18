@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 3px solid #ddd;
+  padding: 24px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  height:40px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1 align="center">List of Users</h1>
+
+<table id="customers">
+     <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+     </tr>
+  <tr th:each="t: ${listUsers}">
+     <td th:text="${t.id}">ID</td>
+     <td th:text="${t.name}">Name</td>
+     <td th:text="${t.email}">Email</td>
+     <td th:text="${t.phone}">Phone Number</td>
+  </tr>
+</table>
+</body>
+</html>
